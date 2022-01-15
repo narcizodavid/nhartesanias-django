@@ -39,19 +39,20 @@ class Product(models.Model):
             count = int(reviews['count'])
         return count  """       
 
-""" class VariationManager(models.Manager):
+class VariationManager(models.Manager):
     def sizes(self):
         return super(VariationManager, self).filter(variation_category='size', is_active=True)
     
     def pesos(self):
         return super(VariationManager, self).filter(variation_category='peso', is_active=True)
-  
+
+
 variation_category_choice = (
     ('size', 'size'),
     ('peso', 'peso'),
-) """
+)
 
-""" class Variation(models.Model):
+class Variation(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     variation_category = models.CharField(max_length=100, choices=variation_category_choice)
     variation_value = models.CharField(max_length=100)
@@ -61,7 +62,7 @@ variation_category_choice = (
     objects = VariationManager()
     
     def __str__(self):
-        return self.variation_value """
+        return self.variation_value
 
 """ class ReviewRating(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
