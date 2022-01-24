@@ -70,7 +70,7 @@ class Account(AbstractBaseUser):
     def has_module_perms(self, add_label):
         return True
 
-""" class UserProfile(models.Model):
+class UserProfile(models.Model):
     user = models.OneToOneField(Account, on_delete=models.CASCADE)
     address_line_1 = models.CharField(blank=True, max_length=100)
     address_line_2 = models.CharField(blank=True, max_length=100)
@@ -84,4 +84,4 @@ class Account(AbstractBaseUser):
         return self.user.first_name
     
     def full_address(self):
-        return f'{self.address_line_1} {self.address_line_2}' """
+        return f'{self.address_line_1} {self.address_line_2}'

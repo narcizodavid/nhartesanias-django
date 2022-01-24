@@ -1,3 +1,8 @@
+
+<a id="app-whatsapp" target="_blanck" href="https://api.whatsapp.com/send?phone=51941456677&amp;text=Hola!&nbsp;de&nbsp;la&nbsp;página,&nbsp;una&nbsp;consulta?">
+	<i class="fab fa-whatsapp" alt="Whatsapp"></i>
+</a>
+
 <!-- ========================= FOOTER ========================= -->
 <footer class="section-footer border-top">
 	<div class="container">
@@ -19,3 +24,39 @@
 	</div><!-- //container -->
 </footer>
 <!-- ========================= FOOTER END // ========================= -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.thumb a').click(function(e) {
+			e.preventDefault();
+			$('.mainImage img').attr('src', $(this).attr("href"));
+		})
+	})
+
+	$(".mainImage img").mouseover(function(e) {
+		var capturaImg = $(this).attr("src");
+		$(".lupa img").attr("src", capturaImg);
+		$(".lupa").fadeIn("fast");
+		$(".lupa").css({
+			"height": $(".visorImg").height()+"px",
+		})
+	})
+
+	$(".mainImage img").mouseout(function(e) {
+		$(".lupa").fadeOut("fast");
+	})
+
+	$(".mainImage img").mousemove(function(e) {
+		var posX = e.offsetX;
+		var posY = e.offsetY;
+		$(".lupa img").css({
+			"margin-left": -posX+"px",
+			"margin-top": -posY+"px"
+		})
+	})
+
+</script>
+</body>
+</html>
+
