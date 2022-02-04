@@ -21,13 +21,16 @@
     display: none;
   }
 }
+
 @media all and (max-width: 768px) {
-  /* mobile devices */
+
   .mobile-block {
     display: block;
   }
 
-  .mobile-hide {
+}
+
+  /* .mobile-hide {
     display: none;
   }
 
@@ -79,6 +82,6 @@
   .navbar-expand .navbar-collapse {
     flex-direction: column;
   }
-}
+} */
 
 /*# sourceMappingURL=responsive.css.map */
